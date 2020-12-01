@@ -9,11 +9,11 @@ jobs:
     name: PullRequestAction
     runs-on: ubuntu-latest
     steps:
-      - name: pull-request-action
-        uses: vsoch/pull-request-action@1.0.6
-        continue-on-error: true
-        env:
-          GITHUB_TOKENs: ${{ secrets.GITHUB_TOKEN }}
+      - name: Invoke workflow without inputs
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: My Workflow
+          token: ${{ secrets.PERSONAL_TOKEN }}
       - name: other action
         if: ${{ !success() }}
         run: echo HERE
