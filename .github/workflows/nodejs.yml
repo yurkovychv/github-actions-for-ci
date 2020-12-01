@@ -13,7 +13,7 @@ jobs:
 #         uses: benc-uk/workflow-dispatch@v1
         continue-on-error: true
         id: dispatch
-        run: echo FIRST
+        run: cp /123 /222
 #         with:
 #           workflow: My Workflow
 #           token: ${{ secrets.PERSONAL_TOKEN }}
