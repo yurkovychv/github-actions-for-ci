@@ -14,10 +14,6 @@ jobs:
         continue-on-error: true
         env:
           GITHUB_TOKENs: ${{ secrets.GITHUB_TOKEN }}
-  second-request:
-    name: SomeAction
-    runs-on: ubuntu-latest
-    steps:
       - name: other action
         if: ${{ !success() }}
         run: echo HERE
