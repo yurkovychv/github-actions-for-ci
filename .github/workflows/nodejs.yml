@@ -16,5 +16,5 @@ jobs:
           workflow: My Workflow
           token: ${{ secrets.PERSONAL_TOKEN }}
       - name: other action
-        if: ${{ !success() }}
+        if: ${{ success() }}
         run: echo HERE
