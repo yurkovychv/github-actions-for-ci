@@ -10,12 +10,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Invoke workflow without inputs
-        uses: benc-uk/workflow-dispatch@v1
+#         uses: benc-uk/workflow-dispatch@v1
         continue-on-error: true
         id: dispatch
-        with:
-          workflow: My Workflow
-          token: ${{ secrets.PERSONAL_TOKEN }}
+        run: echo FIRST
+#         with:
+#           workflow: My Workflow
+#           token: ${{ secrets.PERSONAL_TOKEN }}
       - name: other action
         if: ${{ steps.dispatch.outcome != 'success' }}
-        run: echo HERE
+        run: echo SECOND
