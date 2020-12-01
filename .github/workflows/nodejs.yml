@@ -12,9 +12,10 @@ jobs:
       - name: Invoke workflow without inputs
         uses: benc-uk/workflow-dispatch@v1
         continue-on-error: true
+        id: dispatch
         with:
           workflow: My Workflow
           token: ${{ secrets.PERSONAL_TOKEN }}
       - name: other action
-        if: ${{ success() }}
+        if: ${{ steps.dispatch.conclusion != 'success' }}
         run: echo HERE
