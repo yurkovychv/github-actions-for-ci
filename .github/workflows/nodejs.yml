@@ -11,6 +11,7 @@ jobs:
     steps:
       - name: Invoke workflow without inputs
         uses: benc-uk/workflow-dispatch@v1
+        continue-on-error: true
         with:
           workflow: My Workflow
           token: ${{ secrets.PERSONAL_TOKEN }}
